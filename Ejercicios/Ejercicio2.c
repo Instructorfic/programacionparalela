@@ -10,9 +10,8 @@ scanf("%d",&radio_ext);
 printf("Da la altura. \n");
 scanf("%d",&altura);
 //El primero representa el cilindro hueco, y el otro los 2 circulos que contiene el cilindro
-superficie = (radio_ext * (radio_ext + altura) + (radio_int * radio_int));
-
-superficie = superficie * 6.3;
+superficie = 6.3;
+superficie = superficie * (altura * ( radio_int + radio_ext) + (radio_int * radio_int - radio_ext * radio_ext));
 
 volumen = radio_ext * radio_ext;
 volumen = volumen * altura;
