@@ -46,6 +46,33 @@ printf("El primer lado vale %d", a);
 printf("El segundo lado vale %d", b);
 printf("El  tecer lado vale %d", c);
 
+int Area;
+int Mayor_b = 0;
+int Mayor_a = 0;
+if (a > b && a > c) {
+Mayor_a = 1;
+	}
+if (b > a && b > c) {
+Mayor_b = 1;
+}
+
+if (Mayor_a == 1) {
+Area = b * c;
+Area = Area / 2;
+}
+else {
+	if (Mayor_b == 1) {
+	Area = a * c;
+	Area = Area /2;
+	}
+	else {
+	Area = a * b;
+	Area = Area /2;
+	}
+		
+}
+
+printf("El area fue: %d",Area);
 return 0;
 
 }
