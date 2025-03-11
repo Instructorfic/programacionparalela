@@ -1,26 +1,53 @@
 #include <stdio.h>
 #include <assert.h>
 
-int division_entera(int a, int b) {
-    if (a == 0) return 0;
-    if (b == 0) {
+typedef struct ResultadoDivision {
+    int cociente;
+    int residuo;
+    int division_por_cero; // 0 si falso de otro modo division por cero se realizó  
+} ResultadoDivision;
+
+ResultadoDivision *division_entera(int numerador, int divisor, ResultadoDivision *resultado) {
+    if (resultado == NULL) {
+        ResultadoDivision *resultado = malloc(sizeof(ResultadoDivision));
+    }
+    if (divisor == 0) {
         printf("División por 0 no definida\n");
-        return (unsigned int)-1;
-    } 
-    int residuo = a >= 0 ? a : -a;
-    int b_times = b;
-    for (int i=0; i<a; i++) {
-        if (residuo > b_times*(i+1)) {
-            residuo -= b_times*(i+1);
+        resultado->division_por_cero = 1;
+        return resultado;
+    }
+    if (numerador == 0) {
+        resultado->cociente = 0;
+        resultado->residuo = 0;
+        resultado->division_por_cero = 0;
+        return resultado;
+    }
+    if (divisor < 0) {
+        resultado = division_entera(numerador, -divisor, resultado);
+        resultado->cociente = -resultado->cociente;
+        // resultado->division_por_cero = 0;
+        return resultado;
+    }
+    if (numerador < 0) {
+        resultado = division_entera(-numerador, divisor, resultado);
+        if (resultado->residuo == 0) {
+            resultado->cociente = -resultado->cociente;
+            resultado->residuo = 0;
+            return resultado;
         } else {
-            return i;
+            resultado->cociente = -(resultado->cociente+1);
+            resultado->residuo = divisor - resultado->residuo;
+            return resultado;
         }
     }
-    return residuo;
+    free(resultado);
+    return division_sin_signo(numerador, divisor, NULL);
 }
 
-int residuo(int a, int b) {
-    return a - division_entera(a, b)*b;
+ResultadoDivision *division_sin_signo(int numerador, int divisor, ResultadoDivision *resultado) {
+    if (resultado == NULL) {
+        ResultadoDivision *resultado = malloc(sizeof(ResultadoDivision));
+    }
 }
 
 int main() {
