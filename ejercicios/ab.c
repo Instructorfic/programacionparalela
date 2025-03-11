@@ -17,7 +17,7 @@ int main(){
 	resultado=a/b;
 	residuo=a%b;
 
-	printf("El resultado es: %f\n El residuo es: %f",resultado,residuo);
+	printf("El resultado es: %f\nEl residuo es: %f\n",resultado,residuo);
 
 
 return 0;
