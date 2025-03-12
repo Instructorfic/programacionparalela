@@ -1,3 +1,8 @@
+//////////////////////////////
+// 3. HORA TRAS UN SEGUNDO  //
+// AUTOR: M. VEGA GUSTAVO   //
+//////////////////////////////
+
 #include <stdio.h>
 
 int main() {

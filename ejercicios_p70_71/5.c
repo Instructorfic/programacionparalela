@@ -1,3 +1,8 @@
+//////////////////////////////
+// 5. PROGRESIÓN GEOMÉTRICA //
+// AUTOR: M. VEGA GUSTAVO   //
+//////////////////////////////
+
 #include <stdio.h>
 
 double pow(double x, int n) {

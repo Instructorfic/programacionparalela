@@ -1,3 +1,8 @@
+////////////////////////////
+// 1. DIVISION ENTERA     //
+// AUTOR: M. VEGA GUSTAVO //
+////////////////////////////
+
 #include <stdio.h>
 #include <stdlib.h>
 

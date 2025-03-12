@@ -1,3 +1,8 @@
+//////////////////////////////
+// 6. COMBINACIONES         //
+// AUTOR: M. VEGA GUSTAVO   //
+//////////////////////////////
+
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>

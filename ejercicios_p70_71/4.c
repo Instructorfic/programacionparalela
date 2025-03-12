@@ -1,3 +1,8 @@
+//////////////////////////////////
+// 4. MULTIPLICACIÓN DE ENTEROS //
+// AUTOR: M. VEGA GUSTAVO       //
+//////////////////////////////////
+
 #include <stdio.h>
 
 int main() {

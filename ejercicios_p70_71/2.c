@@ -1,3 +1,9 @@
+//////////////////////////////
+// 2. MEDIO DE TRES NÚMEROS //
+// AUTOR: M. VEGA GUSTAVO   //
+//////////////////////////////
+
+
 #include <stdio.h>
 
 int main() {
