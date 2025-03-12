@@ -1,3 +1,5 @@
+///Para que funcione tienes que ponerle gcc _________ -lm
+
 #include<stdio.h>
 #include<math.h>
 int main(){
@@ -16,8 +18,10 @@ double x;
 
 x = log(2) / log(interes_anual) ;
 
-printf("El tiempo seria.");
+printf("El tiempo en años seria.");
 printf("\n %f", x);
-
+x = x * 12;
+printf("El tiempo en meses seria.");
+printf("\n %f", x);
 return 0;
 }
