@@ -17,8 +17,8 @@ int main(){
 
 	//calculos
 	double resultado=0;
-	for(int i=1;i<n;i++){
-		resultado=double pow(x,n)+resultado;
+	for(int i=0;i<=n;i++){
+		resultado += pow(x,i);
 	}
 
 	printf("El resultado de la suma es: %f\n",resultado);
