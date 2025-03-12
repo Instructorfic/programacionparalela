@@ -46,33 +46,3 @@ int main() {
 
 
 
-#include <stdio.h>
-
-int main() {
-    int num1, num2, num3;
-
-    // Leer los tres números
-    printf("Introduce el primer número: ");
-    scanf("%d", &num1);
-    printf("Introduce el segundo número: ");
-    scanf("%d", &num2);
-    printf("Introduce el tercer número: ");
-    scanf("%d", &num3);
-
-    // Asegurarse de que los números sean diferentes
-    if (num1 == num2 || num1 == num3 || num2 == num3) {
-        printf("Los números deben ser diferentes.\n");
-        return 1; // Termina el programa si los números no son diferentes
-    }
-
-    // Encontrar el número medio
-    if ((num1 > num2 && num1 < num3) || (num1 < num2 && num1 > num3)) {
-        printf("El número medio es: %d\n", num1);
-    } else if ((num2 > num1 && num2 < num3) || (num2 < num1 && num2 > num3)) {
-        printf("El número medio es: %d\n", num2);
-    } else {
-        printf("El número medio es: %d\n", num3);
-    }
-
-    return 0;
-}
