@@ -7,12 +7,16 @@ scanf("%d",&a);
 
 scanf("%d",&b);
 
-int division_real; 
-division_real= a / b;
-int residuo;
-residuo = a % b;
+float division = a; 
+division= division / b;
+int division_real = division;
+float residuo;
+residuo = division_real;
+residuo = division_real * b;
+residuo = a -residuo ;
+
 printf("El resultado de la division real fue:");
 printf("%d",division_real);
-printf("\n y su residuo fue %d",residuo);
+printf("\n y su residuo fue %f",residuo);
 return 0;
 }
