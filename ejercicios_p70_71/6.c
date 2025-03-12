@@ -46,12 +46,21 @@ long unsigned combinaciones(int n, int r) {
 	if (r == n) return 1;
 	int max_denom_factor = n - r > r ? n - r : r;
 	int min_denom_factor = n - r > r ? r : n - r;
+
+	int min_factorial[min_denom_factor];
+	for (int i=1; i<=min_denom_factor; i++) {
+		min_factorial[i-1] = i;
+	}
 	long unsigned C_n_r = 1;
+	int min_contador = 0;
 	for (int i = max_denom_factor+1; i<=n; i++) {
 		C_n_r *= i;
+		if ((i%2 == min_factorial[min_contador]%2) && (min_contador < min_denom_factor)) {
+			C_n_r /= min_factorial[min_contador++];
+		}
 	}
-	for (int i=1; i<=min_denom_factor; i++) {
-		C_n_r /= i;
+	while (min_contador < min_denom_factor) {
+		C_n_r /= min_factorial[min_contador++];
 	}
 	return C_n_r;
 }
