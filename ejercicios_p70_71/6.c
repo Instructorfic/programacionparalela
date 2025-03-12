@@ -55,7 +55,7 @@ long unsigned combinaciones(int n, int r) {
 	int min_contador = 0;
 	for (int i = max_denom_factor+1; i<=n; i++) {
 		C_n_r *= i;
-		if ((i%2 == min_factorial[min_contador]%2) && (min_contador < min_denom_factor)) {
+		if ((C_n_r%min_factorial[min_contador] == 0) && (min_contador < min_denom_factor)) {
 			C_n_r /= min_factorial[min_contador++];
 		}
 	}
