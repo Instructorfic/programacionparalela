@@ -54,7 +54,12 @@ long unsigned combinaciones(int n, int r) {
 	long unsigned C_n_r = 1;
 	int min_contador = 0;
 	for (int i = max_denom_factor+1; i<=n; i++) {
-		C_n_r *= i;
+		long unsigned intermediate_result = C_n_r*i;
+		if (C_n_r >= intermediate_result) {
+			printf("Overflow intentando calcular las combinaciones, último valor antes de overflow: %lu\n", C_n_r);
+			return -1;
+		}
+		C_n_r = intermediate_result;
 		if ((C_n_r%min_factorial[min_contador] == 0) && (min_contador < min_denom_factor)) {
 			C_n_r /= min_factorial[min_contador++];
 		}
