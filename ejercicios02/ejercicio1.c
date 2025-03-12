@@ -5,21 +5,35 @@ división entera ó el de residuo.*/
 #include <stdio.h>
 int main()
 {
-    int a, b, count;
-    
+    //   a/b=x
+    int a, b, h, x;
     printf("Proporcione el valor de a: ");
     scanf("%d", &a);
     printf("Proporcione el valor de a: ");
     scanf("%d", &b);
 
-    //calcular cuantas veces cabe b en a falta
-    for (size_t i = 0; i < count; i++)
+    //calcular cuantas veces cabe b en a falta  a=bx
+    if (a>b)
     {
-        /* code */
+        x=1;
+        while (a>b*x)
+        {
+            x++;
+        }
+        x--;
+        //residuo
+        h=a-b*x;
+        printf("La division entere de %d y %d es %d y el residuo es %d\n", a, b, x, h);
+        
     }
-    
-    //salida
-    printf("El valor de la division entera de a es de: %d y el valor del resto es de: %d\n");
+    else if (a==b)
+    {
+        printf("La division entere de %d y %d es 1 y el residuo es 0\n", a, b);
+    }
+    else //a<b
+    {
+        printf("La division entere de %d y %d es 0 y el residuo es %d\n", a, b, a);
+    }
     
     return 0;
 }
