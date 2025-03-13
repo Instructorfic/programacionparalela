@@ -1,4 +1,5 @@
-//Incompleto
+//Calcular el número de combinaciones de n elementos tomando r a la vez
+//Raúl Fernando Cruz Moreno
 #include <stdio.h>
 
 int main(){
@@ -7,24 +8,31 @@ int main(){
 	scanf("%d",&n);
 	printf("Ingrese el numero de elementos tomados a la vez: ");
 	scanf("%d",&r);
-
-	fac_n=n;
-	for (int i=n-1;i>0;i--){
-		fac_n*=i;
+	
+	if (r>n){
+		printf("El numero de elementos tomados a la vez no puede ser mayor al numero total de elementos\n");
+		return 0;
 	}
 
+	fac_n=1;
+	for (int i=2;i<=n;i++){
+		fac_n*=i;
+	}
+	printf("%d\n",fac_n);
 
-	fac_r=r;
-	for (int i=r-1;i>0;i--){
+	fac_r=1;
+	for (int i=2;i<=r;i++){
 		fac_r*=i;
 	}
 
-	fac_nr=(n-r);
+	printf("%d\n",fac_r);
+	fac_nr=1;
 
-	for (int i=(n-r)-1;i>0;i--){
+	for (int i=2;i<=(n-r);i++){
 		fac_nr*=i;
 	}
 
+	printf("%d\n",fac_nr);
 	total=(fac_n)/((fac_r)*(fac_nr));
 	printf("Total de combinaciones de %d elementos tomando %d a la vez: %d\n",n,r,total);
 	return 0;
