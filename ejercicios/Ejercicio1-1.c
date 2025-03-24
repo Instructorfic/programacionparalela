@@ -13,9 +13,9 @@ int main(){
 	scanf("%d",&b);
 	//OPERACION
 	division= b/a;
-	restos=
+	restos=b%a;
 
 	//IMPRIMIR LOS RESULTADOS
-	printf("%d",division);
-
+	printf("%d \n",division);
+	printf("%d \n",restos);
 }
