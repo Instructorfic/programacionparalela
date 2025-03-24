@@ -5,6 +5,9 @@ int main(){
 	//VARIABLES
 
 
+	//ENTRADA DE DATOS
+
+
 	//PROCESOS Y SALIDAS
 
 
