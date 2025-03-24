@@ -1,14 +1,14 @@
-# Guía sobre Apuntadores en C
+# Guía sobre apuntadores en C
 
 ## Introducción
 
 Los **apuntadores** son uno de los conceptos más fundamentales y potentes en C. Permiten un control preciso sobre la memoria, la manipulación de datos y la implementación de estructuras de datos complejas como listas enlazadas, pilas, colas, entre otros.
 
-### ¿Qué es un Apuntador?
+### ¿Qué es un apuntador?
 - Un **apuntador** es una variable que almacena la dirección de memoria de otra variable.
 - Permite acceder y modificar el valor de la variable a la que apunta.
 
-## 1. Declaración de Apuntadores
+## 1. Declaración de apuntadores
 
 Para declarar un **apuntador**, se utiliza el símbolo `*` antes del nombre de la variable:
 
@@ -18,18 +18,18 @@ float *fptr;  // Apuntador a un float
 char *cptr;   // Apuntador a un char 
 ```
 
-Ejemplo de Declaración
+Ejemplo de declaración
 
 ```c 
 int a = 10;
 int *ptr = &a; // ptr ahora contiene la dirección de a
 ```
-## 2. Inicialización y Asignación
+## 2. Inicialización y asignación
 
 - La dirección de una variable se obtiene mediante el operador `&`.
 - Para asignar un valor a la ubicación de memoria apuntada, se utiliza el operador de indirección `*`.
 
-### Ejemplo de Asignación
+### Ejemplo de asignación
 
 ```c
 int a = 5;
