@@ -1,3 +1,5 @@
+//Rota los valores almacenados en tres variables
+//Raúl Fernando Cruz Moreno
 #include <stdio.h>
 
 void rotar(int*a,int*b,int*c);
