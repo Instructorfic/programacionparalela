@@ -1,19 +1,16 @@
 #include <stdio.h>
+void miFuncion(){
 
-int main() {
 
-int precioVenta = 10;
-
-return 0;
-
-}
-
-void obtenerPrecioVenta(){
 
 }
 
 
+int main(){
 
+
+
+}
 
 
 
