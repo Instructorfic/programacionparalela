@@ -8,8 +8,8 @@ FECHA:
 
 int main(){
 
-	printf("");
-	scanf("%",&);
+	//printf("");
+	//scanf("%",&);
 
 	return 0;
 }
