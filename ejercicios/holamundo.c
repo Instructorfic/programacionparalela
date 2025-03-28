@@ -3,7 +3,8 @@ fecha:25-02-2025
 */
 #include <stdio.h>
 
-void main(){
+int main(){
 
  printf("hola mundo desde c\n");
+ return 0;
 }
