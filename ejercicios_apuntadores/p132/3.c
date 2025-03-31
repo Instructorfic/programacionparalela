@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+
+// Desarrolle una función que reciba dos apuntadores de cadena de caracteres,
+// para copiar de la primera a la segunda un numero determinado de caracteres
+// desde la derecha
+// NOTA: ¿De qué derecha? ¿Destino o fuente? ¿Ambas?
 void strncpy_right(const char *src, char *dest, size_t n) {
     for (int i=strlen(src)-n, j=0; i<strlen(src); i++, j++) {
         dest[j] = src[i];

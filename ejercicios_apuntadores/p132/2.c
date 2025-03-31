@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+// Desarrolle una función que reciba dos apuntadores de cadena de caracteres,
+// para copiar de la primera a la segunda un numero determinado de caracteres
+// desde la izquierda
 void usr_strncpy(const char *src, char *dest, int n) {
     for (int i=0; i<n; i++) {
         if (src[i] == '\0') {
