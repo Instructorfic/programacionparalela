@@ -25,19 +25,29 @@ typedef struct {
 
 typedef struct {
     Estudiante **estudiantes;
-    int size;
+    unsigned long int size;
 } BD;
 
+BD *create_BD() {
+    BD *new_bd = malloc(sizeof(BD));
+    new_bd->size = 0;
+    new_bd->estudiantes = NULL;
+    return new_bd;
+}
+
 int agregar_estudiante(BD *bd, const char *nombre, const char *matricula) {
-    if (strlen(matricula != 8)) {
+    if (strlen(matricula) != 8) {
         printf("Matricula de tamaño incorrecto\n");
         return ERROR_MATRICULA_INCORRECTA;
     }
-    bd->estudiantes = realloc(bd->estudiantes, ++(bd->size));
-    Estudiante *estudiante_actual = bd->estudiantes[bd->size-1];
-    estudiante_actual = malloc(sizeof(Estudiante));
-    estudiante_actual->nombre = nombre;
-    estudiante_actual->matricula = matricula;
+    bd->estudiantes = realloc(bd->estudiantes, (bd->size+1)*sizeof(Estudiante *));
+    // crear nuevo objeto Estudiante
+    Estudiante *estudiante_actual = malloc(sizeof(Estudiante));
+    estudiante_actual->nombre = strdup(nombre);
+    estudiante_actual->matricula = strdup(matricula);
+    // asignar nuevo estudiante al final de la base de datos
+    bd->estudiantes[bd->size] = estudiante_actual;
+    bd->size++;
     return EXIT_SUCCESS;
 }
 
@@ -55,7 +65,7 @@ int free_bd(BD *bd) {
     free(bd);
 }
 
-int menu(char **opciones, int nopciones) {
+int menu(const char **opciones, int nopciones) {
     printf("Seleccione una de las siguientes opciones:\n");
     for (int i=0; i<nopciones; i++) {
         printf("%d. %s\n", i+1, opciones[i]);
@@ -82,6 +92,7 @@ char *readline(void) {
         n++;
     }
     s[n] = '\0';
+    return s;
 }
 
 #define MATRICULA_1 "XGD_1000"
@@ -93,18 +104,31 @@ char *readline(void) {
 
 int main() {
     // base de datos inicial
-    BD *bd = malloc(sizeof(BD));
+    BD *bd = create_BD();
     agregar_estudiante(bd, NOMBRE_1, MATRICULA_1);
     agregar_estudiante(bd, NOMBRE_2, MATRICULA_2);
     agregar_estudiante(bd, NOMBRE_3, MATRICULA_3);
-	const char *opciones[4] = { "Añadir estudiante", "Imprimir estudiantes en base de datos", "Liberar base de datos", "Salir" };
+	const char *opciones[4] = { "Añadir estudiante", "Imprimir estudiantes en base de datos", "Eliminar base de datos", "Salir" };
     int seleccion = 1;
     while (seleccion = menu(opciones, 4)) {
         switch (seleccion) {
             case 1:
-                printf("Escriba un nombre de estudiante\n");
-
+                printf("Escriba un nombre de estudiante:\n");
+                // bug, jumps to second readline
+                char *nombre = readline();
+                printf("Escriba la matrícula del estudiante:\n");
+                char *matricula = readline();
+                agregar_estudiante(bd, nombre, matricula);
                 break;
+            case 2:
+                imprimir_bd(bd);
+                break;
+            case 3:
+                free_bd(bd);
+                printf("Se eliminó la base de datos\n");
+                break;
+            case 4:
+                return EXIT_SUCCESS;
         }
     }
 }
