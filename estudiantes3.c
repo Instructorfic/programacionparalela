@@ -2,13 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Definición de la estructura Estudiante
 typedef struct {
     	int id;
     	char nombre[50];
 } Estudiante;
 
-// Función para agregar un nuevo estudiante
+//Agregar un nuevo estudiante
 Estudiante* agregar_estudiante(Estudiante* lista, int* tamano) {
     	lista = realloc(lista, (*tamano + 1) * sizeof(Estudiante));
     	if (!lista) {
@@ -25,7 +24,7 @@ Estudiante* agregar_estudiante(Estudiante* lista, int* tamano) {
     	return lista;
 }
 
-// Función para mostrar la lista de estudiantes
+//Mostrar la lista de estudiantes
 void mostrar_estudiantes(Estudiante* lista, int tamano) {
     	for (int i = 0; i < tamano; i++)
         	printf("ID: %d, Nombre: %s\n", lista[i].id, lista[i].nombre);
@@ -44,6 +43,6 @@ int main() {
         	else if (opcion == 2) mostrar_estudiantes(lista, tamano);
     	} while (opcion != 3);
 
-    	free(lista);
+    	free(lista); //LIBERAR MEMORIA 
     	return 0;
 }
