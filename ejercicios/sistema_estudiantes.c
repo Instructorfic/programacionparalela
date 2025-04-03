@@ -98,6 +98,9 @@ void mostrarEstudiantes(struct Estudiante *pr_cabeza){
 	printf("\n");
 }
 void limpiar(struct Estudiante *pr_cabeza){
+	//Si no hay datos,cancelar operacion
+	if(pr_cabeza==NULL)
+		return;
 	struct Estudiante *actual = pr_cabeza;
 	struct Estudiante *siguiente = pr_cabeza->siguiente;
 	//Liberar memoria
