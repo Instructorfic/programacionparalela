@@ -52,6 +52,10 @@ int agregar_estudiante(BD *bd, const char *nombre, const char *matricula) {
 }
 
 void imprimir_bd(BD *bd) {
+    if (bd == NULL) {
+        printf("Base de datos vacía\n");
+        return;
+    }
     printf("Matrícula\t\t\tEstudiante\n");
     for (int i=0; i<bd->size; i++) {
         printf("%s\t\t\t%s\n", bd->estudiantes[i]->matricula, bd->estudiantes[i]->nombre);
@@ -63,6 +67,7 @@ int free_bd(BD *bd) {
         free(bd->estudiantes[i]);
     }
     free(bd);
+    return 0;
 }
 
 int menu(const char **opciones, int nopciones) {
@@ -72,7 +77,9 @@ int menu(const char **opciones, int nopciones) {
     }
     printf("Su selección:\n");
     int seleccion;
-    scanf("%d", &seleccion);
+    char inputs[40];
+    fgets(inputs, 40, stdin);
+    sscanf(inputs, "%d", &seleccion);
     if (1 <= seleccion && seleccion < nopciones)
         return seleccion;
     else
@@ -84,7 +91,7 @@ char *readline(void) {
     char c = 1;
     char *s = malloc(BUFFER);
     unsigned long int n = 0;
-    while ('\n' != (c = getchar())) {
+    while ((c = getchar()) != '\n') {
         if (n%20 == 0) {
             s = realloc(s, n+20);
         }
@@ -110,15 +117,16 @@ int main() {
     agregar_estudiante(bd, NOMBRE_3, MATRICULA_3);
 	const char *opciones[4] = { "Añadir estudiante", "Imprimir estudiantes en base de datos", "Eliminar base de datos", "Salir" };
     int seleccion = 1;
-    while (seleccion = menu(opciones, 4)) {
+    while ((seleccion = menu(opciones, 4))) {
         switch (seleccion) {
             case 1:
                 printf("Escriba un nombre de estudiante:\n");
-                // bug, jumps to second readline
                 char *nombre = readline();
                 printf("Escriba la matrícula del estudiante:\n");
                 char *matricula = readline();
                 agregar_estudiante(bd, nombre, matricula);
+                free(nombre);
+                free(matricula);
                 break;
             case 2:
                 imprimir_bd(bd);
