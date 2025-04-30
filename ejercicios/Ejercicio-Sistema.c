@@ -1,11 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int funcion(int *id,char *nombreAlumno){
+void agregarNombre(char *nombreAlumno);
+void idAlumno(int *id);
 
-	struct *id=0;
-	struct *nombreAlumno;
-}
+	//DATOS DEL ALUMNO
+	struct funcion{
+	 int *id[5];
+	 char *nombreAlumno[5];
+};
 
 int main(){
 
@@ -20,9 +23,24 @@ int main(){
 	printf("2) Mostrar los alumnos almacenados\n");
 	printf("3) SALIR DEL PROGRAMA\n");
 	
+	//TOMA DE DESICIONES 
 	scanf("%d",&tomaDesicion);
+	
 	if(tomaDesicion == 3){
 	printf("SALIENDO DEL PROGRAMA...\n");
 	return 1;
+	}
+
+	if(tomaDesicion == 1){
+	printf("Ingresa el ID del alumno: \n");
+	scanf("%d",&id);
+
+	printf("Ingresa el nombre del alumno: \n");
+	scanf("%s",&nombreAlumno);
+
+	printf("---Se ha guardado los datos del alumno---\n");
+	}
+	if(tomaDesicion == 2){
+	printf(":::AQUI DEBERIA PONIRSE ALGO:::");
 	}
 }
