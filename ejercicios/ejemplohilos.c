@@ -7,7 +7,8 @@ int main( int argc, char * argv[]){
 	omp_set_num_threads(4);
 	#pragma omp parallel
 	{
-	printf("hola desde el hilo \n");
+	int id = omp_get_thread_num();
+	printf("hola desde el hilo (%d) \n",id);
 	}
 	return 0;
 }
