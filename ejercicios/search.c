@@ -1,31 +1,30 @@
 #include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
 #include<omp.h>
+#include<time.h>
+#include<stdlib.h>
 
 int main(){
-	//VARIABLES
-	//inicia el generador de numeros aleatorios
 	srand(time(NULL));
-
-	int tamano=0;
+	//VARIABLES
+	int tamano;
+	int numero=(rand() % 99)+1;
 	int arr[tamano];
 
+
 	//ENTRADA DE DATOS
-	printf("Ingrese el tamano que tendra el arreglo: ");
+	printf("Ingrese el tamaño que tendra el arreglo: ");
 	scanf("%d",&tamano);
-	
-	#pragma omp parralel for private(numeroAleatorio)
-	for(int i=0;i<tamano;i++){
-		int numeroAleatorio=(rand() %100)+1;
-		int numero=numeroAleatorio;
- 		arr[i]=arr[numero];
-		printf("[%d]: %d\n",i,arr[i]);
-		numero=0;
+
+	if(tamano <= 0){
+		printf("Valor invalido, el tamaño del arreglo tiene que ser mayor a 0.\n");
+		return 1;
 	}
-
 	//PROCESOS Y SALIDAS
-
+	#pragma omp parallel for shared(tamano, numero)
+		for(int i=0;i<tamano;i++){
+			arr[i]=arr[numero];
+			printf("%d\n",arr[i]);
+		}
 
 
 
