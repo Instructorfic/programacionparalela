@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <omp.h>
+
+int main() {
+    int TAMANO, valor_buscar, i;
+
+    printf("Ingrese el tamaño del arreglo: \n");
+    scanf("%d", &TAMANO);
+
+    int arreglo[TAMANO];
+
+    // Ingreso manual del arreglo
+    printf("Ingrese los %d valores del arreglo:\n", TAMANO);
+    for (i = 0; i < TAMANO; i++) {
+        printf("Valor %d: ", i + 1);
+        scanf("%d", &arreglo[i]);
+    }
+
+    printf("Ingrese el número a buscar: \n");
+    scanf("%d", &valor_buscar);
+
+    // Mostrar arreglo
+    printf("Arreglo ingresado: ");
+    for (i = 0; i < TAMANO; i++) {
+        printf("%d ", arreglo[i]);
+    }
+    printf("\n");
+
+    // Búsqueda paralela
+    int encontrado = 0;
+    int posicion = -1;
+
+    #pragma omp parallel for shared(encontrado, posicion)
+    for (i = 0; i < TAMANO; i++) {
+        if (!encontrado && arreglo[i] == valor_buscar) {
+            #pragma omp critical
+            {
+                if (!encontrado) {
+                    encontrado = 1;
+                    posicion = i;
+                }
+            }
+        }
+    }
+
+    if (encontrado) {
+        printf("Se encontró el número: %d\n", valor_buscar);
+        printf("En la posición: %d\n", posicion);
+    } else {
+        printf("El número %d no se encontró en el arreglo.\n", valor_buscar);
+    }
+
+    return 0;
+}
