@@ -1,0 +1,83 @@
+ARCHIVO DE CÁLCULOS
+---------------------
+Tamaño de la matriz: 25 x 25 
+
+Versiones:
+- Código serial
+- Código paralelo
+---------------------
+
+TIEMPOS DE EJECUCIÓN - VERSIÓN SERIAL:
+-> PRIMER EVENTO:
+Tiempo serial: 0.000179 segundos
+-> SEGUNDO EVENTO:
+Tiempo serial: 0.000190 segundos
+-> TERCER EVENTO:
+Tiempo serial: 0.000188 segundos
+
+---------------------
+
+TIEMPOS DE EJECUCIÓN - VERSIÓN PARALELA:
+
+-> PRIMER EVENTO:
+Número de hilos = 2 -> Tiempo: 0.0002 s
+Número de hilos = 4 -> Tiempo: 0.0002 s
+Número de hilos = 8 -> Tiempo: 0.0005 s
+
+-> SEGUNDO EVENTO:
+Número de hilos = 2 -> Tiempo: 0.0003 s
+Número de hilos = 4 -> Tiempo: 0.0002 s
+Número de hilos = 8 -> Tiempo: 0.0025 s
+
+-> TERCER EVENTO:
+Número de hilos = 2 -> Tiempo: 0.0003 s
+Número de hilos = 4 -> Tiempo: 0.0051 s
+Número de hilos = 8 -> Tiempo: 0.0010 s
+
+---------------------
+
+CÁLCULOS (Speed-Up y Eficiencia):
+
+Speed-Up = Tiempo serial / Tiempo paralelo  
+Eficiencia = Speed-Up / Número de hilos
+
+-> PRIMER EVENTO:
+- 2 hilos: Speed-Up = 0.000179 / 0.0002 = 0.90, Eficiencia = 0.90 / 2 = 0.45
+- 4 hilos: Speed-Up = 0.000179 / 0.0002 = 0.90, Eficiencia = 0.90 / 4 = 0.23
+- 8 hilos: Speed-Up = 0.000179 / 0.0005 = 0.36, Eficiencia = 0.36 / 8 = 0.045
+
+-> SEGUNDO EVENTO:
+- 2 hilos: Speed-Up = 0.000190 / 0.0003 = 0.63, Eficiencia = 0.63 / 2 = 0.31
+- 4 hilos: Speed-Up = 0.000190 / 0.0002 = 0.95, Eficiencia = 0.95 / 4 = 0.24
+- 8 hilos: Speed-Up = 0.000190 / 0.0025 = 0.08, Eficiencia = 0.08 / 8 = 0.01
+
+-> TERCER EVENTO:
+- 2 hilos: Speed-Up = 0.000188 / 0.0003 = 0.63, Eficiencia = 0.63 / 2 = 0.31
+- 4 hilos: Speed-Up = 0.000188 / 0.0051 = 0.04, Eficiencia = 0.04 / 4 = 0.01
+- 8 hilos: Speed-Up = 0.000188 / 0.0010 = 0.19, Eficiencia = 0.19 / 8 = 0.02
+
+---------------------
+
+PROMEDIOS GENERALES:
+
+Speed-Up promedio:  
+- 2 hilos: (0.90 + 0.63 + 0.63) / 3 = 0.72  
+- 4 hilos: (0.90 + 0.95 + 0.04) / 3 = 0.63  
+- 8 hilos: (0.36 + 0.08 + 0.19) / 3 = 0.21  
+
+Eficiencia promedio:  
+- 2 hilos: 0.72 / 2 = 0.36  
+- 4 hilos: 0.63 / 4 = 0.16  
+- 8 hilos: 0.21 / 8 = 0.026  
+
+---------------------
+
+CONCLUSIONES:
+
+Para matrices pequeñas (25x25), la versión del codigo paralelo (o el paralelismo) no mejora los tiempos de ejecución.
+Los valores de Speed-Up son menores a 1 en la mayoría de los eventos, lo cual nos dice que el código paralelo es más lento que a comparación del serial.
+La eficiencia disminuye al aumentar el número de hilos, lo cual muestra el uso ineficiente de el paralelismo.
+Por lo tanto para el tamaño de dimesión 25x25, el código serial es más conveniente de usar.
+
+---------------------
+
