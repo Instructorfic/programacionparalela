@@ -1,0 +1,24 @@
+Resultados de Evaluación - Multiplicación de Matrices
+
+Versión Serial:
+Tiempo de ejecución: 0.004071 segundos
+
+Versión Paralela:
+Número de hilos = 2 -> Tiempo de ejecución: 0.005180 segundos
+(Speed-Up: 0.785907, Eficiencia: 0.39)
+
+Número de hilos = 4 -> Tiempo de ejecución: 0.004983 segundos
+(Speed-Up: 0.816977, Eficiencia: 0.20)
+
+Número de hilos = 8 -> Tiempo de ejecución: 0.005964 segundos
+(Speed-Up: 0.682595, Eficiencia: 0.08)
+
+Número de hilos = 16 -> Tiempo de ejecución: 0.006481 segundos
+(Speed-Up: 0.628143, Eficiencia: 0.03)
+
+Conclusión:
+Con base a los tiempos de ejecución todas las versiones paralelas fueron más lentas con
+respecto a la versión serial que fue de 0.004071 segundos, esto quiere decir que el paralelismo
+no mejoró el rendimiento en este caso, también a medida que aumenta el número de hilos la
+eficiencia cae drásticamente de 0.39 a 0.03 con 16 hilos debido a que la división del trabajo no
+está logrando una mejora en el rendimiento.

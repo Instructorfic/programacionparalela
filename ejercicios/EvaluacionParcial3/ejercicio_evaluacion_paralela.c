@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <omp.h>
+
+#define THREADS 16 //número de hilos a utilizar
 
 int main (){
 	int tamanio, i, j;
@@ -34,16 +36,18 @@ int main (){
 		printf("\n");
 	}*/
 
+	double inicioEjecucion = omp_get_wtime();
 
-	clock_t inicioEjecucion = clock();
+	omp_set_num_threads(THREADS);
 
+	#pragma omp parallel for
 	for(i = 0; i < tamanio; i++){
 		for(j = 0; j < tamanio; j++){
 			m_producto[i][j] = m1[i][j] * m2[i][j];
 		}
 	}
 
-	clock_t finEjecucion = clock();
+	double finEjecucion = omp_get_wtime();
 
 	/*
 	printf("\nMatriz producto resultante\n");
@@ -54,6 +58,6 @@ int main (){
 		printf("\n");
 	}*/
 
-	printf("Tiempo serial: %f segundos\n", (double)(finEjecucion-inicioEjecucion)/CLOCKS_PER_SEC);
+	printf("Tiempo paralelo: %f segundos\n", finEjecucion-inicioEjecucion);
 
 }
