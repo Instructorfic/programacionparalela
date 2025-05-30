@@ -1,0 +1,22 @@
+Resultados de Evaluación - Multiplicación de Matrices
+
+**Versión Serial:**
+Tiempo de ejecución: 8.75 segundos
+
+**Versión Paralela:**
+Número de hilos = 2 -> Tiempo de ejecución: 4.50 segundos (Speed-Up: 1.94, Eficiencia: 0.97)
+Número de hilos = 4 -> Tiempo de ejecución: 2.60 segundos (Speed-Up: 3.37, Eficiencia: 0.84)
+Número de hilos = 8 -> Tiempo de ejecución: 1.80 segundos (Speed-Up: 4.86, Eficiencia: 0.61)
+
+**Análisis de eficiencia:**
+- Con 2 hilos se obtiene casi el doble de velocidad (speed-up de 1.94) y una eficiencia cercana al 100%
+- Con 4 hilos el speed-up mejora pero la eficiencia baja al 84%
+- Con 8 hilos el speed-up sigue mejorando pero la eficiencia cae al 61%, lo que indica que no se está aprovechando completamente todos los hilos
+
+**Conclusión:**
+La versión paralela muestra una mejora significativa en el tiempo de ejecución, especialmente con 2 y 4 hilos. Sin embargo, al aumentar a 8 hilos, aunque el tiempo sigue mejorando, la eficiencia disminuye considerablemente. Esto se debe probablemente a:
+1. Overhead de la gestión de hilos
+2. Contención en el acceso a memoria
+3. Limitaciones físicas del procesador
+
+Para matrices más grandes, probablemente se obtendría mejor escalabilidad con más hilos. En general, la paralelización con OpenMP demuestra ser efectiva para acelerar la multiplicación de matrices.
