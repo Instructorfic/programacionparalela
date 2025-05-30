@@ -1,0 +1,79 @@
+//parcial 3, versión serial de la multiplicación de matrices.
+//emily sofia delgado lopez.
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// PARTE 1: definir las varibles y el tamaño de la matriz
+#define maximo 500  
+
+int main() {
+    // PARTE 2: pedir lkos valores y hacer el scan y el print con la infroamcion a pedir 
+    int tamanio, fila, columna, posicion;
+    
+    printf("tamaño de las matrices (no más de %d): ", maximo);
+    scanf("%d", &tamanio);
+    
+    // PARTE 4: armar las matrices con el int definirlas tmb
+    int matriz1[maximo][maximo]; 
+    int matriz2[maximo][maximo];
+    int matriz_resultado[maximo][maximo];
+
+    // PARTE 5: ponerles los valores al azar para que sean diferentes y numero del 0 al 9 
+    srand(time(0));
+    for(fila = 0; fila < tamanio; fila++) {
+        for(columna = 0; columna < tamanio; columna++) {
+            matriz1[fila][columna] = rand() % 10;
+            matriz2[fila][columna] = rand() % 10;
+        }
+    }
+
+    // PARTE 6: hacer la multiplicación de matrices y tomar el tiempo con el clock
+    clock_t inicio = clock();  
+    
+    for(fila = 0; fila < tamanio; fila++) {
+        for(columna = 0; columna < tamanio; columna++) {
+            matriz_resultado[fila][columna] = 0;  
+            for(posicion = 0; posicion < tamanio; posicion++) {
+                matriz_resultado[fila][columna] += matriz1[fila][posicion] * matriz2[posicion][columna];
+            }
+        }
+    }
+    
+    clock_t fin = clock();  // Ya terminó!
+    
+    // PARTE 7: Mostrar los resultados para la matriz y luego con el modo serial 
+    double tiempo_total = (double)(fin - inicio) / CLOCKS_PER_SEC;
+    printf("\nResultados para matrices %dx%d:\n", tamanio, tamanio);
+    printf("Tardé: %.5f segundos (modo serio serial)\n", tiempo_total);
+
+    //PARTE8 - MOSTRAR MATRIZ 1
+    printf("\nMatriz 1:\n");
+    for(fila = 0; fila < tamanio; fila++) {
+        for(columna = 0; columna < tamanio; columna++) {
+            printf("%d ", matriz1[fila][columna]);
+        }
+        printf("\n");
+    }
+
+    //PARTE 9 MOSTRAR MATRIZ 2
+    printf("\nMatriz 2:\n");
+    for(fila = 0; fila < tamanio; fila++) {
+        for(columna = 0; columna < tamanio; columna++) {
+            printf("%d ", matriz2[fila][columna]);
+        }
+        printf("\n");
+    }
+
+    // PARTE 9 MOSTRAR MATRIZ RESULTADO
+    printf("\nMatriz Resultado:\n");
+    for(fila = 0; fila < tamanio; fila++) {
+        for(columna = 0; columna < tamanio; columna++) {
+            printf("%d ", matriz_resultado[fila][columna]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
