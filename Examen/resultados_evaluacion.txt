@@ -1,0 +1,26 @@
+En todos los ejemplos se usara un arreglo de 100 * 100.
+
+
+0.027742 es el valor serial.
+
+Speed_Up cuando hay 2 hilos = 0.027742 / 0.014715 = 1.86
+
+Eficiencia = 1.86 / 2 * 100 = 93% de eficiencia
+
+Speed_Up cuando hay 4 hilos = 0.027742 / 0.01526 = 1.81
+
+Eficiencia = 1.81 / 4 * 100 = 45.25% de eficiencia
+
+Speed_Up cuando hay 8 hilos = 0.027742 / 0.01511 = 1.83
+
+Eficiencia = 1.83 / 8 * 100 =22.875%
+
+
+Como se puede ver baja mas la eficiencia mientras mas hilos usamos
+Supongo que esto se debe a que estoy usando una maquina virtual, donde no se la cantidad
+de cpu's que tiene accesso.
+
+Puede ser que sea mas lento, debido a que esta predeterminado con una cantidad de 2
+cpu's o un numero similar.
+
+
