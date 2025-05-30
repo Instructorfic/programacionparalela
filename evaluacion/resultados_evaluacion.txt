@@ -1,0 +1,16 @@
+Versión Serial:
+tiempo de ejecución: 0.000013 segs
+
+Versión Paralela:
+Número de hilos = 2 -> tiempo de ejecución: 0.001023 segs
+segundos (Speed-Up: 0,012707722, Eficiencia: 0,006353861)
+
+Número de hilos = 4 -> tiempo de ejecución: 0.000877 segs
+segundos (Speed-Up: 0,000864, Eficiencia: 0,000216)
+
+Número de hilos = 8 -> tiempo de ejecución: 0.001481 segs
+ segundos (Speed-Up: 0,001468, Eficiencia: 0.0,0001835)
+
+la versión paralela parece no mejorar el tiempo de ejecución y disminuye a medida que aumentamos el número de hilos.
+
+
