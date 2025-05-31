@@ -1,0 +1,10 @@
+Resultados de Evaluacion - Multiplicaci贸n de Matrices
+Version Serial:
+Tiempo de ejecucion: 0.000001 segundos
+
+
+Version Paralela:
+Numero de hilos = 2 -> Tiempo de ejecucion: 0.000148 segundos (Speed-Up: ,0.000675 Eficiencia: 0.007462)
+Numero de hilos = 4 -> Tiempo de ejecucion: 0.000285 segundos (Speed-Up: 0.007017, Eficiencia: 0.001754)
+Numero de hilos = 8 -> Tiempo de ejecucion: 0.000489 segundos (Speed-Up: 0.004089, Eficiencia: 0.0005112)
+Conclusion: se trabajaron de las dos formas serial y paralela aun que en le paralela se puede tener eficiencia y poder dividir hilo y trabajar de forma diferente acada uno de ellos,creo que es mejor trabajar de una forma serial por que tiene menos tiempo de ejucucion que los otros hilo
