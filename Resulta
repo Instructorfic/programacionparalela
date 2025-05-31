@@ -1,0 +1,9 @@
+Resultados de Evaluación - Multiplicación de Matrices
+Versión Serial:
+Tiempo de ejecución: 0.000002 segundos
+Versión Paralela:
+Número de hilos = 2 -> Tiempo de ejecución: 0.000145 segundos (Speed-Up: 0.01482, Eficiencia: 0.007474)
+Número de hilos = 4 -> Tiempo de ejecución: 0.000298 segundos (Speed-Up: 0.007017, Eficiencia: 0.001716)
+Número de hilos = 8 -> Tiempo de ejecución: 0.000498 segundos (Speed-Up: 0.004092, Eficiencia: 0.0005115)
+Conclusión:Los resultados revelan que, para esta instancia específica, el método secuencial de multiplicar matrices es considerablemente más rápido que el método concurrente, incluso con más hilos involucrados Cuando el número de tareas de ejecución (de 2 a 8) aumenta, el tiempo que lleva completarlas también aumenta, la tasa de mejora disminuye y la efectividad general disminuye significativamente Esto implica que el trabajo excesivo involucrado en hacer y administrar varios hilos supera cualquier ventaja de hacer tareas simultáneamente para este tamaño o configuración de problema en particular Como resultado, para tareas grandes, ejecutarlas una tras otra demuestra ser el mejor método
+
