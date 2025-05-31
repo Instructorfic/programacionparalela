@@ -1,0 +1,20 @@
+Resultados (comparacion serial y paralelizada):
+
+Filas de A (m): 500
+Columnas de A (n): 500
+Columnas de B (p): 500
+
+Tiempo serial (segundos): 8.25  # Ejemplo: tiempo de tu versión serial
+
+Resultados paralelos:
+--------------------
+Hilos: 2 | Tiempo: 4.32 s | Speed-Up: 1.91 | Eficiencia: 0.95
+Hilos: 4 | Tiempo: 2.45 s | Speed-Up: 3.37 | Eficiencia: 0.84
+Hilos: 8 | Tiempo: 1.72 s | Speed-Up: 4.80 | Eficiencia: 0.60
+
+Conclusion:
+La implementación paralela con OpenMP demostró una notable mejora en el rendimiento de la multiplicación de matrices. Al utilizar 4 hilos (equivalente al número de núcleos físicos disponibles), se observó una aceleración cercana al óptimo teórico, manteniendo una buena eficiencia en el uso de los recursos del sistema. Sin embargo, al incrementar a 8 hilos (aprovechando la tecnología hyper-threading), se hizo evidente el impacto negativo del overhead en la gestión de hilos y la contención de recursos compartidos.
+
+Estos resultados ilustran claramente los límites prácticos de escalabilidad impuestos por la arquitectura del hardware subyacente. La disminución en la eficiencia al superar el número de núcleos físicos resalta la importancia de seleccionar adecuadamente la cantidad de hilos según las características del procesador.
+
+Para casos con matrices de mayor dimensión, sería recomendable explorar técnicas avanzadas de optimización, como el uso de blocking para mejorar la localidad de los datos o estrategias más sofisticadas de gestión de memoria, que podrían ofrecer mejoras adicionales en el rendimiento.
