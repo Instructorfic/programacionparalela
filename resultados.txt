@@ -1,0 +1,13 @@
+
+Alumno: Gilberto Soto Martínez
+
+Versión serial con matriz 3x2 y 2x2
+Tiempo de ejecución: 0
+
+Versión del algoritmo paralelo:
+
+Número de hilos = 2  Tiempo de ejecución: 0.0004 segundos
+Número de hilos = 8  Tiempo de ejecución: 0.0008 segundos
+
+
+
