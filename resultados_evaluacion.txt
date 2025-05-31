@@ -1,0 +1,14 @@
+Primero que nada realizamos varias corridas de codigo sobre le codigo serial y osilaba entre 0.005000 a 0.006000
+La version que usaremos sera la de
+VERSION SERIAL: Tiempo de compilacion de 0.005944
+
+VERSION PARALELA
+Con 2 hilos: Tiempo de ejecucion fue de 0.007590 speed-up = 0.7831 y Eficiencia = 0.3915 o %39.15
+con 4 hilos: Tiempo de ejecucion fue de 0.005944 speed-up = 1 y Eficiencia = 0.25 o %25
+con 8 hilos: Tiempo de ejecucion fue de 0.005893 speed-up = 1.0086 y Eficiencia = 0.1260 o %12.60
+
+CONCLUSION
+Nos dimos cuenta que a mayor hilos de ejecucion era mas rapida pero no mas eficiente la ejecuccion haciendo que a la larga sea peor paralelizar el problema 
+y es mejor dejarlo serial, puede ser a la complejidad del programa, a ser mejor ejecutarlo paso por paso, en ves de sobrecargar a la computadora
+igual es muy interesante entender que no todos los casos es bueno paralelizar y este problema es uno de ellos donde es mejor no paralelizar el codigo
+lo hara mas rapido pero entre mas hilos metamos sera peor su eficiencia.
