@@ -4,7 +4,7 @@ Filas de A (m): 500
 Columnas de A (n): 500
 Columnas de B (p): 500
 
-Tiempo serial (segundos): 8.25  # Ejemplo: tiempo de tu versión serial
+Tiempo serial (segundos): 8.25 
 
 Resultados paralelos:
 --------------------
