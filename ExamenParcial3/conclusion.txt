@@ -1,0 +1,23 @@
+Resultados de Evaluacion - Multiplicacion de Matrices
+
+Versión Serial:
+Tiempo de ejecución: 11.28 segundos
+
+Versión Paralela:
+1. Número de hilos = 2 -> Tiempo de ejecución: 6.01 segundos
+(Speed-Up: 1.88, Eficiencia: 0.94)
+
+2. Número de hilos = 4 -> Tiempo de ejecución: 3.17 segundos
+(Speed-Up: 3.56, Eficiencia: 0.89)
+
+3. Número de hilos = 8 -> Tiempo de ejecución: 1.91 segundos
+(Speed-Up: 5.91, Eficiencia: 0.74)
+
+Conclusion:
+Después de hacer la multiplicación de matrices con los dos programas (uno serial y otro paralelo con OpenMP),
+vimos que la versión paralela realmente es mucho más rápida. Por ejemplo, la versión serial se tardó 11.28
+segundos, mientras que la versión paralela con 8 hilos solo se tardó 1.91 segundos, lo cual fue casi 6 veces
+más rápido. También nos dimos cuenta que al aumentar los hilos, sí baja el tiempo, pero la eficiencia no
+siempre mejora. Con 2 hilos, la eficiencia fue muy buena (0.94), pero con 8 hilos, aunque el programa fue más
+rapido, la eficiencia baja a 0.74. Esto pasa porque el sistema tiene que dividir más el trabajo y eso también
+tiene un costo. 
