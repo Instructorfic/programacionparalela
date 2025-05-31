@@ -1,0 +1,3 @@
+La versión paralela muestra una mejora significativa en el tiempo de ejecución. Sin embargo, la
+eficiencia disminuye a medida que aumentamos el número de hilos, debido ...
+Creo que esto pasa por que al realizar pruebas con matrices pequeñas no necesita tantos recursos y no aprovecha como deberia la paralelizacion para sacarle provecho, pienso que si fuera con un conjunto mas grande si habria algo de diferencia de hacerlo serial y paralelo.
