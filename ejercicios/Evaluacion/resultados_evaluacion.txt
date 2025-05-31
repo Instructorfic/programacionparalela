@@ -1,0 +1,47 @@
+Tiempos de ejecución en la versión serial para distintos tamaños de N:
+
+N=5 -> 0.000007 segundos
+N=500 -> 2.169730 segundos
+N=600 -> 4.800623 segundos
+N=650-> 6.328482 segundos
+
+Tiempos de ejecución en la version paralela para distintos tamaños de N:
+N=5 -> 0.001522 segundos
+N=500 -> 2.928548 segundos
+N=600 ->3.391474 segundos
+N=650 ->4.294248 segundos
+
+SPEEDUP(S) y EFICIENCIA(E) para distintos números de hilos
+Hilos=2
+N=5
+S=0.0029
+E=0.00145
+N=500
+S=0.9313
+E=0.46565
+N=600
+S=1.3925
+E=0.69625
+N=650
+S=1.49171
+E=0.745855
+
+Hilos=4
+N=5
+S=0.002428
+E=0.000607
+N=500
+S=1.050991
+E=0.26274
+N=600
+S=1.058
+E=0.2645
+N=650
+S=1.35249
+E=0.3396
+
+Conclusiones
+La versión paralela muestra una mejora en el tiempo de ejecución cuando el tamaño de las matrices es más grande.
+En cambio, la versión serial muestra mejor tiempo de ejecución para magnitudes de datos no tan grandes.
+La eficiencia disminuye con el aumento del número de hilos, esto ya que no hay una diferencia significativa en el speedup al usar más hilos.
+
