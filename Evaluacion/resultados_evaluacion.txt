@@ -1,0 +1,35 @@
+Resultados de Evaluación - Multiplicación de Matrices
+
+Versión Serial:
+
+Todos los tiempos registrados son de un tamaño de matriz = 5
+
+Tiempo de ejecución:
+0.000002 segundos
+
+Versión Paralela:
+
+Número de hilos = 2 -> Tiempo de ejecución: (Speed-Up: 0.000002 / 0.000561 = 0,003565062 , Eficiencia: 0,003565062 / 2 = 0,001782531 )
+
+Tiempo de ejecucion paralela: 0.000561 segundos
+
+Número de hilos = 4 -> Tiempo de ejecución: (Speed-Up: 0.000002 / 0.000335 = 0,005970149 , Eficiencia: 0,005970149 / 4 = 0,001492537 )
+
+Tiempo de ejecucion paralela: 0.000335 segundos
+
+Número de hilos = 8 -> Tiempo de ejecución: (Speed-Up: 0.000002 / 0.001643 = 0,001217285 , Eficiencia: 0,001217285 / 8 = 0,000152161 )
+Tiempo de ejecucion paralela: 0.001643 segundos
+
+Conclusion:
+Los resultados muestran algo curioso: la versión serial fue mucho más rápida que la paralela, incluso usando múltiples hilos. 
+Con matrices de tamaño 5x5, el tiempo de la serial fue de solo 0.000002 segundos, mientras que la paralela fue más lenta en todos los casos. 
+Con 2 hilos tardó 0.000561 segundos, con 4 hilos bajó un poco a 0.000335, pero al aumentar a 8 hilos empeoró a 0.001643 segundos.
+
+Esto pasa porque el problema es demasiado pequeño para que valga la pena el paralelismo. 
+Crear y sincronizar hilos tiene un costo, y si la tarea es muy rápida de por sí, ese overhead termina haciendo más lento el proceso 
+en lugar de acelerarlo. El speed-up y la eficiencia fueron casi nulos, lo que confirma que, en este caso, la serial es la mejor opción.
+
+Si se probara con matrices más grandes (como 1000x1000 o más), seguramente la paralela empezaría a mostrar ventaja, 
+ya que el trabajo a repartir justificaría el uso de múltiples hilos. 
+Pero para matrices pequeñas como estas, lo simple funciona mejor. 
+En resumen: paralelismo no siempre significa mayor velocidad, depende del tamaño del problema.
