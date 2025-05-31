@@ -1,0 +1,16 @@
+Resultados de Evaluacion - Multiplicacion de Matrices
+
+Version Serial:
+
+Tiempo de ejecucion: 0.008504 segundos
+
+Version Paralela:
+Numero de hilos = 2 -> Tiempo de ejecucion: 0.003763 segundos (Speed-Up: 2.25, Eficiencia: 1.12)
+Numero de hilos = 4 -> Tiempo de ejecucion: 0.002086 segundos (Speed-Up: 4.07, Eficiencia: 1.01)
+Numero de hilos = 8 -> Tiempo de ejecucion: 0.002460 segundos (Speed-Up: 3.45, Eficiencia: 0.43)
+
+Conclusion:
+Aqui podemos observar que el codigo en su version secuencial tarda casi 4 veces mas de lo que tarda el codigo en paralelo
+en cuanto al codigo paralelo notamos un cambio significativo respecto al uso de hilos al momento de ejecutarlo, logramos 
+percatarnos que para este caso en especifico el uso optimo de hilos es 4, concluyendo que cada codigo para poder sacar
+el maximo de los recursos de nuestro equipo es haciendo estos calculos para no desperdiciar y aprovechar al maximo el equipo.
