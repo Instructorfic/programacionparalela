@@ -1,0 +1,44 @@
+Cálculos:
+*** Speedup con 2 hilos ***
+- Speedup (S)		= 1.951161157
+- Eficiencia (E)	= 0.975580579
+
+*** Speedup con 4 hilos ***
+- Speedup (S)		= 1.883645254
+- Eficiencia (E)	= 0.470911314
+
+*** Speedup con 8 hilos ***
+- Speedup (S)		= 1.880782582
+- Eficiencia (E)	= 0.235097823
+
+Se puede observar que aunque el speedup es casi de 2 con cualquier paralelización con 2 o más hilos,
+solo disminuye la eficiencia, incluso el speedup es menor si nos pasamos de los 2 hilos.
+
+Esto tiene explicación en mi máquina porque es de dos núcleos.
+
+El algoritmo que implementé paraleliza la parte más externa de la multiplicación de matrices.
+Corresponde a cada producto fila-columna de A con B (i de 0 a N-1),
+es decir que paraleliza en la operación de cada elemento resultante.
+
+
+Los resultados por corrida son:
+*** Tiempo de corrida ***
+3.655922
+*** Hilos usados ***
+2
+
+*** Tiempo de corrida ***
+3.786962
+*** Hilos usados ***
+4
+
+*** Tiempo de corrida ***
+3.792726
+*** Hilos usados ***
+8
+
+*** Tiempo de corrida ***
+7.133293
+*** Versión Serial ***
+
+Se tiene más detalle en cada archivo output_.
