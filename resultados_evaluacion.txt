@@ -1,0 +1,17 @@
+VERSION SERIAL
+
+Tiempo de ejecucion: .0044 segundos
+
+VERSION PARALELA
+
+Num_hilos = 2 -> Tiempo de ejecucion .0029 segundos (Speed-Up:1.517,Eficiencia:.785)
+Num_hilos = 4 -> Tiempo de ejecucion .0016 segundos (Speed-Up:2.75,Eficiencia:.687)
+Num_hilos = 6 -> Tiempo de ejecucion .0012 segundos (Speed-Up;3.666,Eficiencia:.611)
+
+Num_hilos = 10 -> Tiempo de ejecucion .0012
+Num_hilos = 16 -> Tiempo de ejecucion .0066 - .0112
+
+OBSERVACION
+
+Al aumentar cierta cantidad de hilos llega a un limite optimo de eficiencia, pero tambien tiende a un problema al superar este limite optimo de eficiencia
+pasa que la informacion para cada hilo empieza a perderse.
