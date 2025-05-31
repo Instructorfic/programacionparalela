@@ -1,0 +1,29 @@
+//Sergio A. Jacobo Mandujan
+//Programacion Paralela
+
+Resultados de Evaluacion - Multiplicacion de Matrices N x N
+
+Version Serial: 
+
+Tiempo de ejecucion: 0.000002 segundos
+
+Version Paralela:
+
+Numero de hilos = 2 ->
+Tiempo de ejecucion: 0.000008 segundos
+
+Numero de hilos = 4 ->
+Tiempo de ejecucion: 0.000133 segundos
+
+Numero de hilos = 8 ->
+Tiempo de ejecucion: 0.001596 segundos
+
+Los resultados obtenidos revelan una situación contraintuitiva pero común en programación paralela: 
+para matrices pequeñas, la versión serial supera significativamente en rendimiento a la versión paralela. 
+El tiempo de ejecución se incrementó drásticamente al aumentar el número de hilos (de 0.000002s en serial a 0.001596s con 8 hilos), demostrando que la paralelización no siempre garantiza mejoras de velocidad.
+
+Este comportamiento se explica principalmente creo yo por el overhead que pueda deberse a la gestión de hilos:
+la creación, coordinación y sincronización de múltiples hilos introduce una sobrecarga 
+computacional que, en problemas pequeños, supera el beneficio del procesamiento concurrente. 
+Cuando el tamaño de la matriz es reducido, el tiempo de cálculo por elemento es tan mínimo que la 
+sobrecarga del paralelismo domina el tiempo total de ejecución.
