@@ -1,0 +1,18 @@
+Resultados de Evaluacion - Multiplicacion de matrices
+
+Version Serial: con matrices de 100 x 100
+Tiempo de ejecucion: 0.0100 segundos aproximadamente
+
+Version Paralela: con matrices de 100 x 100
+Numero de hilos = 2 -> Tiempo de ejecucion 0.0072 (Speed-Up: 1.38, Eficiancia: 0.69)
+Numero de hilos = 4 -> Tiempo de ejecucion 0.0083 (Speed-Up: 1.20, Eficiancia: 0.30)
+Numero de hilos = 8 -> Tiempo de ejecucion 0.0085 (Speed-Up: 1.17, Eficiancia: 0.14)
+
+Conclucion
+La version paralela muestra una cierta mejoria en el tiempo de ejecucion.
+Sin embargo, la eficiencia disminuye a medida que aumentamos el numero de hilos, 
+esto se debe a que cuando aumentamos el numero de hilos el Speed-Up no aumenta lo suficiente
+como para que valga la pena usar mas hilos 
+por ejemplo entre usar 4 y 8 el speed-up tienen casi el mismo valor, 
+por lo que la eficiencia disminuiran usando 8 hilo en lugar de 4
+
