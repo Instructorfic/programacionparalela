@@ -1,0 +1,15 @@
+VERSION SERIAL
+
+Tiempo de ejecución: 0.004239 segundos
+
+VERSION PARALELA
+
+Numero de hilos = 2 -> 0.020 segundos, eficiencia:  0.88
+Numero de hilos = 4 -> 0.036 segundos, eficiencia: 0.8333
+Numero de hilos = 6 -> 0.0408 segundos, eficiencia: 0.488
+
+CONCLUCION
+Tras realizar las pruebas con la versión serial y paralela del algoritmo de multiplicación de matrices, 
+se puede observar que el rendimiento no siempre mejora al aumentar el número de hilos. Para tareas pequeñas o medianas, 
+usar demasiados hilos puede generar sobrecarga y disminuir el rendimiento general.  la eficiencia del paralelismo depende del equilibrio 
+entre el número de hilos y el tamaño del problema.
